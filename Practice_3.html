@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title> EECS 348 Practice 3 </title>
+    </head>
+    <script>
+        function checkSame(form)
+        {
+            password1 = form.password1.value
+            password2 = form.password2.value
+            if(password1 != password2)
+            {
+                alert("The two passwords do not match.");
+                return true;
+            }
+            else if(password1.length < 8)
+            {
+                alert("The password is not long enough.");
+                return false;
+            }
+            else if(password1 == password2)
+            {
+                alert("The two passwords are matched.");
+                return true;
+            }
+        }
+    </script>
+    <body>
+        <form onsubmit="return checkSame(this)">
+        <table border = 1 align = 'Center'>
+            <tr>
+                <td>Enter Password:</td>
+                <td><input type = password name = password1 size = 25></td>
+            </tr>
+            <tr>
+                <td>Confirm Password:</td>
+                <td><input type = password name = password2 size = 25></td>
+            </tr>
+            <tr>
+                <td><colspan = 2 align = right></td>
+                <td><input type = submit value = "Submit"></td>
+            </tr>
+    </table>
+    </form>
+    </body>
